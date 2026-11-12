@@ -1,8 +1,9 @@
 const IMG = import.meta.env.VITE_IMAGE_BASE_URL;
 
-import hero2 from "../assets/hero/hero_img02.jpg";
-import hero4 from "../assets/hero/hero_img04.jpg";
-import openDay from "../assets/hero/Open Day 1 (1920 x 790).jpg";
+import hero2 from "../assets/hero/hero_img02.jpg"
+import hero4 from "../assets/hero/hero_img04.jpg"
+import openDay from "../assets/hero/Open_Day.jpg"
+
 export const nav = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About us" },
