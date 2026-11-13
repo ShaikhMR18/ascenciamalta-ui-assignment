@@ -897,3 +897,64 @@ img.arch-frame {
     scrollbar-color: var(--navy-2) var(--grey-1);
   }
 }
+
+
+/* Floating scroll-to-top control */
+.scroll-to-top {
+  position: fixed;
+  right: clamp(1rem, 4vw, 2.5rem);
+  bottom: clamp(1rem, 4vw, 2.5rem);
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: #ba2727;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(182, 35, 35, 0.18);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.scroll-to-top:hover {
+  background: var(--navy-2);
+  transform: translateY(-3px);
+}
+.scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+}
+.scroll-to-top path {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    transition: none;
+  }
+}
+
+
+/* Smooth image transitions for the hero carousel */
+.hero.slider .slide {
+  transform: scale(1.035);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.2s cubic-bezier(0.2, 0.65, 0.3, 1),
+    visibility 0s 0.75s;
+}
+.hero.slider .slide.is-active {
+  transform: scale(1);
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero.slider .slide,
+  .hero.slider .slide.is-active {
+    transform: none;
+    transition: none;
+  }
+}

@@ -28,7 +28,7 @@ export default function Header() {
               {item.label}
             </NavLink>
           ))}
-          <Link to="/contact" className="btn btn--solid nav__cta" onClick={closeMenu}>
+          <Link to="/contact" className="btn btn--ghost nav__cta" onClick={closeMenu}>
             Apply now
           </Link>
         </nav>
