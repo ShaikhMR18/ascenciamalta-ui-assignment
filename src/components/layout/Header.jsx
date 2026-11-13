@@ -5,7 +5,7 @@ import { nav } from "../../data";
 
 const navIconPaths = {
   Home: "M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z",
-  "About us": "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 6v.1m0 3v5",
+  "About us": "M3 9 12 4l9 5M5 10v8m4-8v8m6-8v8m4-8v8M3 20h18M2 9h20",
   Contact: "M3 5.5h18v13H3zM3 6l9 7 9-7",
 };
 
@@ -53,3 +53,4 @@ export default function Header() {
     </header>
   );
 }
+
