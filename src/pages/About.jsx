@@ -1,18 +1,19 @@
-import CampusLife from "../components/CampusLife.jsx";
-import { PageBanner } from "../components/UI.jsx";
-import { about } from "../data/";
-import usePageTitle from "../hooks/usePageTitle.js";
+import usePageTitle from "../hooks/usePageTitle";
+import PageBanner from "../components/ui/PageBanner";
+import SchoolStory from "../components/about/SchoolStory";
+import CampusLife from "../components/about/CampusLife";
 
 export default function About() {
   usePageTitle("About us");
+
   return (
     <>
       <PageBanner
         title="About Ascencia Malta"
         text="Higher education, English language and digital learning in Floriana."
       />
-
-      <CampusLife about={about} />
+      <SchoolStory />
+      <CampusLife />
     </>
   );
 }

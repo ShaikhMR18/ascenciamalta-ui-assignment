@@ -1,24 +1,21 @@
+import { useRef } from "react";
+import Button from "../ui/Button";
+import Section from "../ui/Section";
+import { about } from "../../data";
+import "../../styles/campusLife.css";
 
-import  { useRef } from "react";
+const CARD_GAP = 20;
 
-import "../styles/campusLife.css";
-import { Button, Section } from "./UI";
-
-const CampusLife = ({ about }) => {
+export default function CampusLife() {
   const sliderRef = useRef(null);
 
   const handleSlide = (direction) => {
     const slider = sliderRef.current;
-    if (!slider) return;
-
-    const card = slider.querySelector(".campus-slide");
-    if (!card) return;
-
-    const gap = 20;
-    const scrollAmount = card.offsetWidth + gap;
+    const card = slider?.querySelector(".campus-slide");
+    if (!slider || !card) return;
 
     slider.scrollBy({
-      left: direction * scrollAmount,
+      left: direction * (card.offsetWidth + CARD_GAP),
       behavior: "smooth",
     });
   };
@@ -26,13 +23,11 @@ const CampusLife = ({ about }) => {
   return (
     <Section title="Our campus life">
       <div className="campus-gallery">
-
         <div className="campus-gallery__header">
           <p className="campus-gallery__description">
-            Discover our vibrant campus, student activities,
-            modern facilities and unforgettable experiences.
+            Discover our vibrant campus, student activities, modern facilities and unforgettable
+            experiences.
           </p>
-
           <div className="campus-gallery__controls">
             <button
               type="button"
@@ -42,7 +37,6 @@ const CampusLife = ({ about }) => {
             >
               &#8592;
             </button>
-
             <button
               type="button"
               onClick={() => handleSlide(1)}
@@ -58,12 +52,7 @@ const CampusLife = ({ about }) => {
           <div className="campus-gallery__track">
             {about.campus.map((src, index) => (
               <div className="campus-slide" key={src}>
-                <img
-                  src={src}
-                  alt={`Ascencia Malta campus life ${index + 1}`}
-                  loading="lazy"
-                />
-
+                <img src={src} alt={`Ascencia Malta campus life ${index + 1}`} loading="lazy" />
                 <div className="campus-slide__overlay">
                   <span>Campus Life</span>
                 </div>
@@ -76,13 +65,9 @@ const CampusLife = ({ about }) => {
           <div className="campus-gallery__progress">
             <span />
           </div>
-
           <Button to="/contact">Visit the campus</Button>
         </div>
-
       </div>
     </Section>
   );
-};
-
-export default CampusLife;
+}

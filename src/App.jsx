@@ -2,13 +2,13 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import { Header } from "./components/Layout";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
     <>
       <Header />
-
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -17,6 +17,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
